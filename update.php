@@ -21,6 +21,12 @@ if(isset($_POST['update']) && isset($_POST['id'])){
 	$email = $user->email;
 }
 
+// check if form canceled
+if(isset($_POST['cancelUser'])){
+	header('Location: index.php');
+	exit();
+}
+
 // check if form submitted
 if(isset($_POST['updateUser'])){
 
@@ -93,8 +99,7 @@ if(isset($_POST['updateUser'])){
 		]);
 
 		unset($_SESSION['user_id']);
-		
-		// redirect to page so filds are cleared
+
 		header('Location: index.php');
 		exit();
 	}
@@ -125,6 +130,7 @@ if(isset($_POST['updateUser'])){
     <input type="password" class="form-control" id="password" name="password">
   </div>  
   <button type="submit" class="btn btn-primary" name="updateUser">Update</button>
+  <button type="submit" class="btn btn-secondary" name="cancelUser">Cancel</button>
 </form>
 
 <?php require_once('./includes/footer.php'); ?>
