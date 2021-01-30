@@ -1,5 +1,7 @@
 <?php require_once('./includes/header.php'); ?>
 <?php
+
+	// check if form submitted
 	if(isset($_POST['addUser'])){
 		$username = trim($_POST['username']);
 		$email = trim($_POST['email']);
@@ -74,6 +76,15 @@
 		}
 		
 	}
+
+	// get all users from database
+	$sql = "SELECT * FROM users";
+
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute();
+	$result = $stmt->setFetchMode(PDO::FETCH_OBJ);
+
+	$count = 1; // increment for each user - first column in table
 ?>
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="mb-4">
@@ -101,6 +112,7 @@
 <?php endif; ?>
 
 <h2>All Users</h2>
+
 <table class="table table-striped">
   <thead class="text-white bg-dark">
     <tr>
@@ -111,20 +123,16 @@
     </tr>
   </thead>
   <tbody>
+  	<?php foreach($stmt->fetchAll() as $user): ?>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <th scope="row"><?php echo $count++; ?></th>
+      <td><?php echo $user->username; ?></td>
+      <td><?php echo $user->email ?></td>
       <td>
       	<a href="./update.php" class="btn btn-warning btn-sm">Update</a>
       </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
+  	<?php endforeach; ?>
   </tbody>
 </table>
 
