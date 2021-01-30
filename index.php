@@ -129,7 +129,11 @@
       <td><?php echo $user->email ?></td>
       <td>
       	<a href="./update.php" class="btn btn-warning btn-sm">Update</a>
-      	<a href="./delete.php?id=<?php echo $user->id; ?>" class="btn btn-danger btn-sm">Delete</a>
+      	<form action="<?php echo htmlspecialchars('./delete.php'); ?>" class="d-inline" method="post">
+      		<input type="hidden" name="id" value="<?php echo $user->id; ?>">
+      		<input type="submit" value="Delete" name="delete" class="btn btn-danger btn-sm">
+      	</form>
+      	
       </td>
     </tr>
   	<?php endforeach; ?>
