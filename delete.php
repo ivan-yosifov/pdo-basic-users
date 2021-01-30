@@ -2,6 +2,12 @@
 session_start();
 require_once('./includes/db.php');
 
+// Get request not allowed
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+	header('Location: index.php');
+	exit();
+}
+
 
 if(!isset($_POST['delete']) && !isset($_POST['id'])){
 	header('Location: index.php');
