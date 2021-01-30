@@ -82,7 +82,6 @@
 
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute();
-	$result = $stmt->setFetchMode(PDO::FETCH_OBJ);
 
 	$count = 1; // increment for each user - first column in table
 ?>
@@ -123,13 +122,14 @@
     </tr>
   </thead>
   <tbody>
-  	<?php foreach($stmt->fetchAll() as $user): ?>
+  	<?php foreach($stmt->fetchAll(PDO::FETCH_OBJ) as $user): ?>
     <tr>
       <th scope="row"><?php echo $count++; ?></th>
       <td><?php echo $user->username; ?></td>
       <td><?php echo $user->email ?></td>
       <td>
       	<a href="./update.php" class="btn btn-warning btn-sm">Update</a>
+      	<a href="./delete.php?id=<?php echo $user->id; ?>" class="btn btn-danger btn-sm">Delete</a>
       </td>
     </tr>
   	<?php endforeach; ?>
