@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require_once('./includes/db.php'); ?>
 <!doctype html>
 <html lang="en">
