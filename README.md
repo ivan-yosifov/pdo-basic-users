@@ -6,7 +6,7 @@ The project allows us to add, view, update and delete users.
 
 ## Usage
 
-### In order to use this project, you need to have a server installed on your computer. I use [XAMPP](https://www.apachefriends.org/download.html "Download XAMPP").
+In order to use this project, you need to have a server installed on your computer. I use [XAMPP](https://www.apachefriends.org/download.html "Download XAMPP").
 
 Start XAMPP and make sure both Modules Apache and MySQL are running.
 ![xampp_modules](https://user-images.githubusercontent.com/6689087/106453702-6193a180-6492-11eb-9718-ac0269abd193.png)
