@@ -1,4 +1,4 @@
-# pdo-simple-crud
+# PDO basic usres
 
 This is a simple project that demonstarates the use of Create Read Update Delete (CRUD) functionality with PHP. We use the PDO extension to connect to MySQL database. Additionally we use prepared statements to prevent against SQL injection attacks.
 
