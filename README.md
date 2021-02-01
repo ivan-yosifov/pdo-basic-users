@@ -32,3 +32,8 @@ Then perform the following steps
 4. In your borwser of choice enter `localhost/pdo-basic-users-main`
 
 Enjoy
+
+## Screenshots
+![users](https://user-images.githubusercontent.com/6689087/106454961-3316c600-6494-11eb-8ca2-86a3d5ce24b1.png)
+
+![update-users](https://user-images.githubusercontent.com/6689087/106454965-34e08980-6494-11eb-8c65-629abf58091b.png)
