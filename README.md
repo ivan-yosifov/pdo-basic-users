@@ -14,7 +14,7 @@ Start XAMPP and make sure both Modules Apache and MySQL are running.
 Then you need to create a database
 In you browser go to `localhost/phpmyadmin`
 
-Create a new database - `test`
+Create a new database - `test`.
 ![new_database](https://user-images.githubusercontent.com/6689087/106453713-63f5fb80-6492-11eb-8f0c-e7be44a666c8.png)
 
 Go to the SQL tab and paste the following query
